@@ -1,0 +1,38 @@
+{
+  // 使用独立于 Windows PATH 的绝对路径，避免 VSCode 从资源管理器启动时读不到 mingw 的环境变量
+  "C_Cpp.default.compilerPath": "D:/Program Files/mingw64/bin/g++.exe",
+  "C_Cpp.default.cStandard": "c17",
+  "C_Cpp.default.cppStandard": "c++17",
+  "C_Cpp.default.intelliSenseMode": "windows-gcc-x64",
+  // Windows 控制台默认是 GBK(936)，源码按 UTF-8 保存并让编译器输出 UTF-8，中文才不会乱码
+  "C_Cpp.default.compilerArgs": [
+    "-finput-charset=UTF-8",
+    "-fexec-charset=UTF-8"
+  ],
+  // 必须与下方 tasks.json 的编译参数一致，否则 IntelliSense 与实际编译结果会有差异
+  "C_Cpp.default.includePath": [
+    "${workspaceFolder}/**",
+    "D:/Program Files/mingw64/lib/gcc/x86_64-w64-mingw32/16.2.0/include",
+    "D:/Program Files/mingw64/lib/gcc/x86_64-w64-mingw32/16.2.0/include/c++",
+    "D:/Program Files/mingw64/lib/gcc/x86_64-w64-mingw32/16.2.0/include/c++/x86_64-w64-mingw32",
+    "D:/Program Files/mingw64/lib/gcc/x86_64-w64-mingw32/16.2.0/include/c++/backward",
+    "D:/Program Files/mingw64/x86_64-w64-mingw32/include"
+  ],
+  "C_Cpp.default.defines": [
+    "_WIN32",
+    "__GNUC__"
+  ],
+  // 让 VSCode 内置的代码检查与编译参数保持一致
+  "C_Cpp.codeAnalysis.clangTidy.enabled": false,
+  "files.encoding": "utf8",
+  // 生成的中间文件不进版本库，也不在资源管理器里干扰视线
+  "files.exclude": {
+    "**/*.exe": true,
+    "**/*.o": true,
+    "**/*.obj": true,
+    "**/.vscode": true
+  },
+  "search.exclude": {
+    "**/build": true
+  }
+}

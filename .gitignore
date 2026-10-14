@@ -1,0 +1,21 @@
+# 编译产物
+*.exe
+*.o
+*.obj
+*.out
+*.d
+*.a
+*.dll
+
+# 调试产物
+*.stackdump
+*.dSYM/
+
+# 构建目录
+build/
+out/
+
+# 编辑器 / 系统
+.vscode/ipch/
+.cache/
+Thumbs.db
