@@ -1,16 +1,17 @@
 #include <iostream>
 using namespace std;
+
+
+
 class Student{
 private:
     int score;
 public:
 
-    Student(){
-        score=85;
-    }
+    Student(){}
 
-    void setscore(int a){
-        score=a;
+    void setscore(int score){
+        this->score=score;
     }
     void getscore(){
         cout<<score<<endl;
